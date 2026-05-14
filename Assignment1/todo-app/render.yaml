@@ -1,0 +1,52 @@
+## render.yaml – Blueprint for multi-service deployment (Part B)
+## Docs: https://render.com/docs/blueprint-spec
+
+services:
+  # ── Backend (Node.js + Express) ──────────────────────────
+  - Type: web
+    name: be-todo
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: todo-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: todo-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: todo-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: todo-db
+          property: database
+      - key: DB_PORT
+        fromDatabase:
+          name: todo-db
+          property: port
+      - key: DB_SSL
+        value: "true"
+      - key: PORT
+        value: "5000"
+      - key: FRONTEND_URL
+        value: https://fe-todo.onrender.com
+
+  # ── Frontend (React + nginx) ─────────────────────────────
+  - Type: web
+    name: fe-todo
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://be-todo.onrender.com
+
+# ── Managed PostgreSQL Database ──────────────────────────
+databases:
+  - name: todo-db
+    databaseName: tododb
+    user: todouser
+    plan: free
