@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-ink;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .checkbox-custom {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+}
