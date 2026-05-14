@@ -3,10 +3,12 @@
 
 services:
   # ── Backend (Node.js + Express) ──────────────────────────
-  - Type: web
+  - type: web
     name: be-todo
     env: docker
     dockerfilePath: ./backend/Dockerfile
+    branch: main
+    autoDeploy: true
     envVars:
       - key: DB_HOST
         fromDatabase:
@@ -36,10 +38,12 @@ services:
         value: https://fe-todo.onrender.com
 
   # ── Frontend (React + nginx) ─────────────────────────────
-  - Type: web
+  - type: web
     name: fe-todo
     env: docker
     dockerfilePath: ./frontend/Dockerfile
+    branch: main
+    autoDeploy: true
     envVars:
       - key: REACT_APP_API_URL
         value: https://be-todo.onrender.com
