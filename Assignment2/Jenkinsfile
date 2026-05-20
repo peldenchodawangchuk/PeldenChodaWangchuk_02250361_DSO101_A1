@@ -18,28 +18,28 @@ pipeline {
         }
         stage('Install') {
             steps {
-                bat 'npm install'
+                bat 'cd Assignment2 && npm install'
             }
         }
         stage('Build') {
             steps {
-                bat 'npm run build'
+                bat 'cd Assignment2 && npm run build'
             }
         }
         stage('Test') {
             steps {
-                bat 'npm test'
+                bat 'cd Assignment2 && npm test'
             }
             post {
                 always {
-                    junit 'junit.xml'
+                    junit 'Assignment2/junit.xml'
                 }
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    docker.build("${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}")
+                    docker.build("${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}", 'Assignment2')
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
                         docker.image("${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}").push()
                     }
