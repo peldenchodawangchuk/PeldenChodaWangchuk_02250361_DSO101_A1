@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+    tools {
+        nodejs 'NodeJS'
+    }
+    environment {
+        DOCKERHUB_USERNAME = 'maxandcheese'
+        IMAGE_NAME = 'todo-app'
+        IMAGE_TAG = 'latest'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    credentialsId: 'github-creds',
+                    url: 'https://github.com/peldenchodawangchuk/PeldenChodaWangchuk_02250361_DSO101_A1/tree/main/Assignment2.git'
+            }
+        }
+        stage('Install') {
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+            post {
+                always {
+                    junit 'junit.xml'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    docker.build("${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}")
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
+                        docker.image("${DOCKERHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}").push()
+                    }
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed. Check logs above.'
+        }
+    }
+}
