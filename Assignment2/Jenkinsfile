@@ -13,7 +13,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     credentialsId: 'github-creds',
-                    url: url: 'https://github.com/peldenchodawangchuk/PeldenChodaWangchuk_02250361_DSO101_A1.git'
+                    url: 'https://github.com/peldenchodawangchuk/PeldenChodaWangchuk_02250361_DSO101_A1.git'
             }
         }
         stage('Install') {
