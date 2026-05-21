@@ -187,9 +187,19 @@ Tests: 3 passed, 3 total
 
 ---
 
-##Screenshots
+## Screenshots
 
-##GitHub Actions success
+## GitHub Actions success
+<img width="1562" height="646" alt="Screenshot 2026-05-21 132024" src="https://github.com/user-attachments/assets/537c391d-fc5e-42b6-8e39-1aa8ecb344ce" />
+
+## DockerHub image pushed
+<img width="1900" height="898" alt="Screenshot 2026-05-21 132201" src="https://github.com/user-attachments/assets/c223aaa4-ab28-4b0d-b550-61044d0dc148" />
+
+## Render deployment (dashboard)
+<img width="1853" height="892" alt="Screenshot 2026-05-21 132140" src="https://github.com/user-attachments/assets/f6435f8f-4b23-4376-b517-39336fdc6da8" />
+
+## Live app on Render URL
+<img width="1919" height="1024" alt="Screenshot 2026-05-21 132215" src="https://github.com/user-attachments/assets/a28f7119-aaa5-469d-b29f-55999dead1c4" />
 
 ---
 
