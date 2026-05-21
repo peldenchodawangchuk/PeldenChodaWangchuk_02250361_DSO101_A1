@@ -8,8 +8,8 @@ A full-stack to-do list application with React frontend, Node.js/Express backend
 
 | Service | URL |
 |---|---|
-| Frontend | https://fe-todo.onrender.com *(replace after deployment)* |
-| Backend API | https://be-todo.onrender.com *(replace after deployment)* |
+| Frontend | https://fe-todo-02250361.onrender.com |
+| Backend API | https://be-todo-02250361.onrender.com  |
 
 ---
 
@@ -65,21 +65,20 @@ todo-app/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/todo-app.git
+git clone https://github.com/peldenchodawangchuk/PeldenChodaWangchuk_02250361_DSO101_A1.git
+mkdir todo-app
 cd todo-app
 ```
 
 ### 2. Set up Backend
 ```bash
 cd backend
-cp .env.example .env
+cp  .env
 # Edit .env with your local DB credentials
 npm install
 node server.js
 ```
 Backend runs at `http://localhost:5000`
-
-> **Screenshot:** *(Add screenshot of terminal showing "Backend server running on port 5000")*
 
 ### 3. Set up Frontend
 ```bash
@@ -91,8 +90,6 @@ npm start
 ```
 Frontend runs at `http://localhost:3000`
 
-> **Screenshot:** *(Add screenshot of the app running in browser)*
-
 ---
 
 ## Part A: Deploy Pre-Built Docker Image to Docker Hub
@@ -103,29 +100,24 @@ Frontend runs at `http://localhost:3000`
 # From project root
 
 # Backend
-docker build -t <yourdockerhub>/be-todo:<your-student-id> ./backend
-docker push <yourdockerhub>/be-todo:<your-student-id>
+docker build -t maxandcheese/be-todo:02250361./backend
+docker push maxandcheese/be-todo:02250361
 
 # Frontend
-docker build -t <yourdockerhub>/fe-todo:<your-student-id> ./frontend
-docker push <yourdockerhub>/fe-todo:<your-student-id>
+docker build -t maxandcheese/fe-todo:02250361 ./frontend
+docker push maxandcheese/fe-todo:02250361
 ```
 
-> **Screenshot:** *(Add screenshot of `docker push` success output)*
-
-> **Screenshot:** *(Add screenshot of Docker Hub repository page showing your image)*
 
 ### Step 2: Create Render PostgreSQL Database
 1. Go to [render.com](https://render.com) → New → PostgreSQL
 2. Name it `todo-db`, choose the Free plan
 3. Copy the connection details (host, user, password, database name)
 
-> **Screenshot:** *(Add screenshot of Render PostgreSQL dashboard)*
-
 ### Step 3: Deploy Backend on Render
 1. Go to Render → New → **Web Service**
 2. Select **"Existing image from Docker Hub"**
-3. Image: `<yourdockerhub>/be-todo:<your-student-id>`
+3. Image: `maxandcheese/be-todo:02250361`
 4. Add Environment Variables:
 
 | Key | Value |
@@ -138,26 +130,19 @@ docker push <yourdockerhub>/fe-todo:<your-student-id>
 | `DB_SSL` | `true` |
 | `PORT` | `5000` |
 
-> **Screenshot:** *(Add screenshot of Render Web Service environment variables page)*
-
-> **Screenshot:** *(Add screenshot of successful backend deployment)*
 
 ### Step 4: Deploy Frontend on Render
 1. Render → New → **Web Service** → Existing Docker Hub image
-2. Image: `<yourdockerhub>/fe-todo:<your-student-id>`
+2. Image: `maxandcheese/fe-todo:02250361`
 3. Add Environment Variable:
 
 | Key | Value |
 |---|---|
 | `REACT_APP_API_URL` | `https://be-todo.onrender.com` |
 
-> **Screenshot:** *(Add screenshot of successful frontend deployment)*
-
-> **Screenshot:** *(Add screenshot of the live app in browser)*
-
 ---
 
-## 🔄 Part B: Automated Image Build and Deployment
+##  Part B: Automated Image Build and Deployment
 
 Part B uses the `render.yaml` Blueprint so that every `git push` to `main` triggers a fresh build and redeploy automatically.
 
@@ -166,12 +151,11 @@ Part B uses the `render.yaml` Blueprint so that every `git push` to `main` trigg
 2. Connect your GitHub repository
 3. Render auto-detects `render.yaml` and provisions all services
 
-> **Screenshot:** *(Add screenshot of Render Blueprint services being created)*
 
 ### Step 2: Set secret environment variables in Render dashboard
 Since `render.yaml` uses `fromDatabase` references, DB credentials are injected automatically. Only set these manually if needed:
 - `DB_SSL=true`
-- `FRONTEND_URL=https://fe-todo.onrender.com`
+- `FRONTEND_URL=https://fe-todo-02250361.onrender.com`
 
 ### Step 3: Test auto-deploy
 Make any change to your code and push:
@@ -182,10 +166,6 @@ git push origin main
 ```
 
 Render will automatically build a new Docker image and redeploy.
-
-> **Screenshot:** *(Add screenshot of Render showing "Deploy in progress" after a push)*
-
-> **Screenshot:** *(Add screenshot of final live app)*
 
 ---
 
@@ -245,9 +225,5 @@ REACT_APP_API_URL=http://localhost:5000
 
 ---
 
-##Author
-
-Pelden Choda Wangchuk
-02250361
 DSO101 – Continuous Integration and Continuous Deployment
 Bachelor of Engineering in Software Engineering (SWE)
