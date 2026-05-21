@@ -224,6 +224,24 @@ A successful run shows the following in Jenkins:
 
 ---
 
+##Screenshots
+
+## Successful Pipeline Execution
+<img width="1541" height="108" alt="Screenshot 2026-05-21 103854" src="https://github.com/user-attachments/assets/216ee84b-4cf5-44bf-a3f2-c93032a69d4f" />
+
+## Test Result
+<img width="597" height="245" alt="Screenshot 2026-05-21 103951" src="https://github.com/user-attachments/assets/2b739f84-f5b9-4469-b206-3dc540f7eb1a" />
+
+## Console Output
+<img width="936" height="137" alt="Screenshot 2026-05-21 104933" src="https://github.com/user-attachments/assets/05ff2409-d34c-4519-820b-3565a8d184e4" />
+
+## Doucker Hub Image
+<img width="1839" height="958" alt="Screenshot 2026-05-21 104959" src="https://github.com/user-attachments/assets/4c09486c-1108-4036-b879-f8d79ac3a8b2" />
+
+---
+
+---
+
 ## Links
 
 - **GitHub Repository:** `https://github.com/peldenchodawangchuk/PeldenChodaWangchuk_02250361_DSO101_A1/tree/main/Assignment2`
