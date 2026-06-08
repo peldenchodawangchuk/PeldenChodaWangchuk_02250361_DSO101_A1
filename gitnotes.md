@@ -55,41 +55,19 @@ docker info
 docker help
 ```
 
-> **Screenshot:** `docker --version` output *(add screenshot here)*
+> **Screenshot:** `docker --version` output 
+<img width="671" height="61" alt="Screenshot 2026-06-08 150159" src="https://github.com/user-attachments/assets/490234d7-dad5-49f6-8a64-7e12acb2dec7" />
 
 ---
 
-## Docker Lab 1 — Basic Commands
-
-Lab consists of 17 questions. Answers submitted below by question number.
-
-| # | Answer |
-|---|--------|
-| 1 | 25.0.5 |
-| 2 | 0 |
-| 3 | 9 |
-| 4 | *(add screenshot)* |
-| 5 | *(add screenshot)* |
-| 6 | 0 |
-| 7 | 4 |
-| 8 | 6 |
-| 9 | nginx:alpine |
-| 10 | awesome_northcut |
-| 11 | 866 |
-| 12 | Exited |
-| 13–16 | *(add screenshots)* |
-
-**Lab Completion Screenshot:** *(add screenshot)*
-
----
-
-# Unit 2: Docker Images and Containers
+# Unit 1: Docker Images and Containers
 
 ## Docker Images
 
 A Docker image is a **read-only template** used as the foundation for creating containers. Think of it as a snapshot of your application and its environment, frozen in time and ready to be deployed.
 
-> **Screenshot:** Docker images list *(add screenshot)*
+> **Screenshot:** Docker images list
+<img width="1591" height="482" alt="Screenshot 2026-06-08 151612" src="https://github.com/user-attachments/assets/e268c8a7-200f-4781-8f73-bd499d3657be" />
 
 ---
 
@@ -97,7 +75,8 @@ A Docker image is a **read-only template** used as the foundation for creating c
 
 A container is the **live, running instance** of a Docker image. Once you spin up a container from an image, it becomes an active, isolated process running your application.
 
-> **Screenshot:** Running containers *(add screenshot)*
+> **Screenshot:** Running containers
+> <img width="1541" height="466" alt="Screenshot 2026-06-08 151717" src="https://github.com/user-attachments/assets/207f8d4d-3380-46fa-a699-dbcad48f9d8f" />
 
 ---
 
@@ -172,35 +151,14 @@ docker exec -it <container_id> bash
 
 ---
 
-## Docker Lab 2 — Docker Images
-
-| # | Answer |
-|---|--------|
-| 1 | 9 |
-| 2 | 7.81 MB |
-| 3 | 1.14 - alpine |
-| 4 | python:3.6 |
-| 5 | /opt |
-| 6 | python app.py |
-| 7 | 8080 |
-| 8 | *(add screenshot)* |
-| 9 | `docker run -p 8282:8080 webapp-color` |
-| 10 | correct - ok |
-| 11 | Debian |
-| 12 | 920 MB |
-| 13–15 | *(add screenshots)* |
-
-**Lab Completion Screenshot:** *(add screenshot)*
-
----
-
-# Unit 3: Dockerfile and Docker Compose
+# Unit 2: Dockerfile and Docker Compose
 
 ## What is a Dockerfile?
 
 A Dockerfile is essentially a recipe — a plain text script containing a sequence of instructions that Docker follows step by step to build a custom image. Every line in a Dockerfile adds a new layer to the image.
 
-> **Screenshot:** Dockerfile example *(add screenshot)*
+> **Screenshot:** Dockerfile example
+<img width="515" height="310" alt="Screenshot 2026-06-08 151848" src="https://github.com/user-attachments/assets/209d9dfd-a268-4b3c-b0bc-f7e6b3819ee4" />
 
 ---
 
@@ -342,7 +300,7 @@ docker run --memory="512m" --cpus="1" --read-only my-app
 
 ---
 
-# Unit 4: CI/CD and Jenkins
+# Unit 3: CI/CD and Jenkins
 
 ## What is CI/CD?
 
@@ -580,7 +538,7 @@ on:
 
 ---
 
-# Unit 5: Advanced Pipelines
+# Unit 4: Advanced Pipelines
 
 ## What is a Pipeline?
 
