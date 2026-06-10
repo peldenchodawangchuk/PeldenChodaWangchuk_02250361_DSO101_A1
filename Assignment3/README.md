@@ -29,7 +29,7 @@ This assignment configures a **GitHub Actions** workflow to automate:
 ## Repository Structure
 
 ```
-PeldenChodaWangchuk_02250361_DSO101_A1/
+PeldenChodaWangchuk_02250361_DSO101_A1/todo-app/Assignment3
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml         ← GitHub Actions workflow
