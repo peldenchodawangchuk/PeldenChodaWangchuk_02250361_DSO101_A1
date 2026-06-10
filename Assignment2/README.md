@@ -32,7 +32,7 @@ The pipeline automates:
 ## Repository Structure
 
 ```
-assignment1-node-app/
+assignment1-todo-app/
 ├── src/
 │   ├── index.js          # Application entry point
 │   └── todo.js           # Todo logic module
